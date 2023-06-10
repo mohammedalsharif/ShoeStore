@@ -13,7 +13,7 @@ import com.example.shoestoreapp.R
 import com.example.shoestoreapp.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
-    private val viewModel: WelcomeViewModel by viewModels()
+
     private lateinit var binding: FragmentWelcomeBinding
 
     companion object {

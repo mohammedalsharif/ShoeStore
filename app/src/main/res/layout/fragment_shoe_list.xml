@@ -31,6 +31,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAddShoe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"

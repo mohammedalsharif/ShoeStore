@@ -55,7 +55,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvShoeName"
-                android:text="@{shoes.price}"
+                android:text="@{shoes.description}"
                 tools:text="$1000" />
 
 

@@ -18,7 +18,7 @@ class InstructionsFragment : Fragment() {
         fun newInstance() = InstructionsFragment()
     }
 
-    private val viewModel: InstructionsViewModel by viewModels()
+
     private lateinit var binding: FragmentInstructionsBinding
 
     override fun onCreateView(
