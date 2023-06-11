@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.shoestoreapp.login.LoginViewModel" />
     </data>
 
     <ScrollView
@@ -63,6 +66,7 @@
                         android:id="@+id/TIEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@={viewModel.email}"
                         android:hint="@string/email" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +81,7 @@
                         android:id="@+id/TIPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@={viewModel.password}"
                         android:hint="@string/password" />
                 </com.google.android.material.textfield.TextInputLayout>
 

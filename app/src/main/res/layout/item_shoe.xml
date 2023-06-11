@@ -11,52 +11,73 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp">
 
             <ImageView
                 android:id="@+id/shoesImage"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
                 android:src="@drawable/img_shoes"
-                tools:src="@drawable/img_shoes"
-                app:layout_constraintDimensionRatio="h,1:1"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.40"
+                tools:src="@drawable/img_shoes" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{@string/size(shoes.shoeSize)}"
+
+                app:layout_constraintEnd_toEndOf="@+id/tvShoeName"
+                app:layout_constraintStart_toEndOf="@+id/shoesImage"
+                app:layout_constraintTop_toBottomOf="@+id/tvShoeName" />
 
             <TextView
                 android:id="@+id/tvShoeName"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{shoes.name}"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoesImage"
+                app:layout_constraintStart_toEndOf="@+id/shoesImage"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="shoe Nike" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:text="@{shoes.company}"
                 android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvShoeName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/shoesImage"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                tools:text="@string/company" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:text="@{shoes.description}"
-                tools:text="$1000" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:text="shoe" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

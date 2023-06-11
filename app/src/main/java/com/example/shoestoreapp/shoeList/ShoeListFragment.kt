@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.shoestoreapp.R
 import com.example.shoestoreapp.databinding.FragmentShoeListBinding
+import com.example.shoestoreapp.databinding.ItemShoeBinding
 import com.example.shoestoreapp.model.Shoe
 
 class ShoeListFragment : Fragment() {
@@ -38,13 +39,15 @@ class ShoeListFragment : Fragment() {
     ): View {
         createMenu()
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+        binding.lifecycleOwner=viewLifecycleOwner
+        binding.viewModel=viewModel
         viewModel.shoeList.observe(viewLifecycleOwner) {
-            binding.shoeList.apply {
-                adapter = ShoeAdapter(it)
-                layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            for (shoe in it){
+                addView(binding.linearLayout,shoe)
             }
+
         }
-        binding.btnAddShoe.setOnClickListener{
+        binding.btnAddShoe.setOnClickListener {
             findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailsFragment)
         }
 
@@ -52,6 +55,11 @@ class ShoeListFragment : Fragment() {
         return binding.root
     }
 
+    private fun addView(parent: ViewGroup?, shoe: Shoe){
+        val shoeBinding : ItemShoeBinding = DataBindingUtil.inflate(layoutInflater, R.layout.item_shoe, parent, false)
+        shoeBinding.shoes = shoe
+        binding.linearLayout.addView(shoeBinding.root)
+    }
     private fun createMenu() {
         requireActivity().addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -70,5 +78,9 @@ class ShoeListFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
+    //            binding.shoeList.apply {
+//                adapter = ShoeAdapter(it)
+//                layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+//            }
 
 }

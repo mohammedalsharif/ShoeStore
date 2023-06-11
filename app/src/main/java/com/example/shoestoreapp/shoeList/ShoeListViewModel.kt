@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.shoestoreapp.R
 import com.example.shoestoreapp.model.Shoe
+import timber.log.Timber
 
 class ShoeListViewModel : ViewModel() {
 
@@ -39,11 +40,15 @@ class ShoeListViewModel : ViewModel() {
         )
     }
 
+    fun shoeListIsEmpty():Boolean {
+        return shoeList.value.isNullOrEmpty()
+    }
+
     fun makeFieldsBlank() {
-        shoeName.value=""
-        shoeSize.value=""
-        company.value=""
-        description.value=""
+        shoeName.value = ""
+        shoeSize.value = ""
+        company.value = ""
+        description.value = ""
     }
 
 }

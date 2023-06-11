@@ -27,4 +27,7 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="please_fill_all_fields">Please Fill all Fields</string>
+    <string name="please_enter_email_and_password">Please enter email and password</string>
+    <string name="there_are_no_shoes_to_display_please_add_shoes">There are no shoes to display. Please add shoes</string>
+    <string name="size">size: %s</string>
 </resources>
