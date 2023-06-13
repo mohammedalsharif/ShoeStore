@@ -6,7 +6,8 @@
     <data>
 
     </data>
-
+    <!--I use ConstraintLayout because it is more versatile
+    and easy to specify the view positions based on screen sizes.-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:titleTextColor="@color/white" />
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
